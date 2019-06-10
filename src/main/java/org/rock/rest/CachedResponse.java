@@ -30,7 +30,7 @@ public class CachedResponse {
   public void get_data() {
 
       try {
-            URL url = new URL("http://grafzahl/data");
+            URL url = new URL("http://grafzahl:8080/data");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-Type", "application/json");
