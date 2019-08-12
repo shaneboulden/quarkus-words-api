@@ -31,19 +31,15 @@ public class DataResource {
     @Inject
     CachedResponse response;
 
-    public DataResource() {
-
-    }
+    public DataResource() {}
 
     @GET
     public DataPoint[] list() {
         DataPoint[] data = new DataPoint[10];
 
-        // make a request to the API
-        // TODO change this to an environment variable
         try {
 
-            // now let's parse the JSON to data points
+            // parse the JSON returned from the GrafZahl API to data points
             StringBuffer content = response.get();
             JsonObject jsonObject = new JsonParser().parse(content.toString()).getAsJsonObject();
             JsonElement categories = jsonObject.get("categories");
